@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>HR 0011 — Creation of JTF Trident - Command &amp; Intelligence Category within Discord Server (Army)</title>
+<style>body{font-family:"Times New Roman",serif;margin:0;background:#e9e9ea;color:#111}
+header{background:#111;color:#fff;padding:14px 16px;text-align:center}header h1{margin:0;font-size:20px;letter-spacing:.5px}header p{margin:4px 0 0;color:#bbb;font-size:14px}
+a{color:#1a3e8c}
+#pages{max-width:900px;margin:16px auto;padding:0 12px}canvas{display:block;width:100%;height:auto;margin:0 0 16px;background:#fff;box-shadow:0 1px 6px rgba(0,0,0,.25)}
+#status{text-align:center;padding:40px 16px;color:#555}*{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+footer{text-align:center;padding:8px 16px 24px;font-size:14px;color:#555}
+@media print{body{display:none}}</style></head>
+<body oncontextmenu="return false">
+<header><h1>MEGA&#8217;S GOVERNMENT</h1><p>HR 0011 — Creation of JTF Trident - Command &amp; Intelligence Category within Discord Server (Army)</p></header>
+<div id="pages"><div id="status">Loading the bill&hellip;</div></div>
+<footer><a href="../index.html">All bills</a></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+(function () {
+  var block = function (e) { e.preventDefault(); return false; };
+  ['contextmenu', 'copy', 'cut', 'dragstart', 'selectstart'].forEach(function (name) { document.addEventListener(name, block); });
+  document.addEventListener('keydown', function (e) {
+    var key = (e.key || '').toLowerCase();
+    if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'c', 'a', 'u'].indexOf(key) !== -1) block(e);
+  });
+  var pdfjsLib = window['pdfjs-dist/build/pdf'];
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  var holder = document.getElementById('pages');
+  pdfjsLib.getDocument('HR-0011.pdf').promise.then(function (pdf) {
+    holder.innerHTML = '';
+    var chain = Promise.resolve();
+    for (var n = 1; n <= pdf.numPages; n++) {
+      (function (num) {
+        chain = chain.then(function () { return pdf.getPage(num); }).then(function (page) {
+          var base = page.getViewport({ scale: 1 });
+          var width = Math.min(holder.clientWidth, 900);
+          var scale = (width / base.width) * (window.devicePixelRatio || 1) * 1.5;
+          var viewport = page.getViewport({ scale: scale });
+          var canvas = document.createElement('canvas');
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+          holder.appendChild(canvas);
+          return page.render({ canvasContext: canvas.getContext('2d'), viewport: viewport }).promise;
+        });
+      })(n);
+    }
+  }).catch(function () {
+    document.getElementById('status').textContent = 'This bill could not be loaded. Please try again in a minute.';
+  });
+})();
+</script></body></html>
